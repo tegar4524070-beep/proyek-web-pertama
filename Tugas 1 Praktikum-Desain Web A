@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praktikum4</title>
+</head>
+<body>
+    <h1>Formulir Pengiriman Resep Baru</h1>
+
+    <action="/submit-recipe" method="post">
+        <Fieldset>
+            <legend>Informasi Dasar Resep</legend>
+            <p>
+                <label for="recipe=name">Nama Resep:</label><br>
+                <input type="text" id="recipe-name" name="recipe-name" required maxlength="80">
+            </p>
+            <p>
+                <label for="prep-time">Waktu Persiapan (menit):</label><br>
+                <input type="number" id="prep-time" name="prep-time" min="5" placeholder="Contoh: 4">
+            </p>
+        </Fieldset>
+        <fieldset>
+            <legend>Detail Tambahan</legend>
+            <p>
+                <label for="difficulty">Tingkat Kesulitan (1-5)</label><br>
+                <input type="range" id="difficulty" name="difficulty" min="1" max="5" step="1">
+            </p>
+            <p>
+                <label for="recipe-category">Kategori Resep:</label><br>
+                <input list="categories" id="recipe-category" name="recipe-category">
+                <datalist id="categories">
+                    <option value="Makanan Pembuka"></option>
+                    <option value="Makanan Utama"></option>
+                    <option value="Hidangan Penutup"></option>
+                    <option value="Minuman"></option>
+                </datalist>
+            </p>
+        </fieldset>
+        <button type="submit">Kirim Resep</button>
+
+    </Form>
+    <hr>
+    <h2>Praktikum Halaman Resep</h2>
+
+    <article>
+        <header>
+            <h1>Judul Resep akan Muncul Di sini</h1>
+            <p>Waktu Perisapan: <time datetime="PT45M">45 menit</time></p>
+        </header>
+        <figure>
+            <img src="placeholder.jpg" alt="Gambar Hidangan Utama Resep" width="600">
+            <figcaption>Deskripsi Singkat atau Caption untuk gambar.</figcaption>
+        </figure>
+        <P>
+            Deskripsi lengkap tentang resep akan ada disini. Bahan rahasia kami adalah 
+            <mark>bumbu spesial</mark> yang membuat semuanya lezat.
+        </P>
+        <details>
+            <summary>Tampilkan informasi Gizi</summary>
+            <ul>
+                <li>Kalori : 150kcal</li>
+                <li>Protein: 20g</li>
+                <li>Karbohidrat: 30g</li>
+            </ul>
+        </details>
+        <h1>Video Tutorial</h1>
+        <video controls width="600">
+            <source src="video.mp4" type="video/mp4">
+            maaf, browser anda tidak mendukung pemutaran video.
+            <track
+            label="Bahasa Indonesia"
+            kind="subtitles"
+            srclang="id"
+            src="subtitles.vtt"
+            default>
+        </video>
+        <footer>
+            <p>
+                Tingkat Kesulitan: <meter min="0" max="5" value="3" title="3 dari 5">Sedang</meter>
+            </p>
+        </footer>
+    </article>
+</body>
+</html>
